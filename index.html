@@ -126,7 +126,12 @@
 				
 				<!-- How it works -->
 				<section id="features" class="py-20 bg-gray-50">
-					<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="text-center mb-16"><h2 class="text-4xl font-bold text-gray-900 mb-4">How it works</h2><p class="text-xl text-gray-600">The app every Fisker owner absolutely needs</p></div>
+					<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+						<div class="text-center mb-16">
+							<h2 class="text-4xl font-bold text-gray-900 mb-4">How it works</h2>
+							<p class="text-xl text-gray-600">The app every Fisker owner absolutely needs</p>
+						</div>
+						
 						<div class="grid md:grid-cols-3 gap-8">
 							<!-- Version Check -->
 							<div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
@@ -161,6 +166,21 @@
 									<img alt="Service Actions" class="w-full rounded-lg" src="./images/screen-service-action.jpg">
 								</div>
 							</div>
+						</div>
+						
+						<!-- Space -->
+						<div class="h-20"></div>
+
+						<!-- Video -->
+						<div class="relative">
+							<h2 class="text-center text-4xl font-bold text-gray-900 mb-4">Stay connected. Stay in control. Stay Freesker</h2>
+							<video id="freeskerVideo"
+								class="w-full max-w-lg mx-auto rounded-lg shadow-xl cursor-pointer"
+								src="./videos/intro.mp4"
+								controls
+								playsinline
+								muted
+							></video>
 						</div>
 					</div>
 				</section>
@@ -746,6 +766,27 @@
 			  content.classList.toggle('hidden');
 			});
 		  });
+		</script>
+
+		<!-- Freesker Video -->
+		<script>
+			const video = document.getElementById("freeskerVideo");
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						video.play();
+					} else {
+						video.pause();
+					}
+				});
+			}, {
+				threshold: 0.4
+			});
+
+			observer.observe(video);
+			video.addEventListener("click", () => {
+				video.muted = false;
+			});
 		</script>
 
 		<script src="https://static.readdy.ai/assistant/widget.umd.js" async="" type="text/javascript"></script>
