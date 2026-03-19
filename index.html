@@ -174,13 +174,16 @@
 						<!-- Video -->
 						<div class="relative">
 							<h2 class="text-center text-4xl font-bold text-gray-900 mb-4">Stay connected. Stay in control. Stay Freesker</h2>
-							<video id="freeskerVideo"
-								class="w-full max-w-lg mx-auto rounded-lg shadow-xl cursor-pointer"
-								src="./videos/intro.mp4"
-								controls
-								playsinline
-								muted
-							></video>
+							<div class="flex justify-center mt-10">
+								<iframe class="rounded-xl shadow-lg"
+										width="800"
+										height="450"
+										frameborder="10"
+										src="https://www.youtube.com/embed/ynTEfZshRX4" 
+										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+										style="border:none;">
+								</iframe>
+							</div>
 						</div>
 					</div>
 				</section>
@@ -766,27 +769,6 @@
 			  content.classList.toggle('hidden');
 			});
 		  });
-		</script>
-
-		<!-- Freesker Video -->
-		<script>
-			const video = document.getElementById("freeskerVideo");
-			const observer = new IntersectionObserver((entries) => {
-				entries.forEach(entry => {
-					if (entry.isIntersecting) {
-						video.play();
-					} else {
-						video.pause();
-					}
-				});
-			}, {
-				threshold: 0.4
-			});
-
-			observer.observe(video);
-			video.addEventListener("click", () => {
-				video.muted = false;
-			});
 		</script>
 
 		<script src="https://static.readdy.ai/assistant/widget.umd.js" async="" type="text/javascript"></script>
