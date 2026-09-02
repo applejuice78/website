@@ -745,7 +745,7 @@
 		
 		<!-- Countdown Script -->
 		<script>
-			const endDate = new Date("2026-09-04T23:59:59");
+			const endDate = new Date("2026-09-06T23:59:59");
 
 			function updateCountdown() {
 				const now = new Date().getTime();
@@ -762,7 +762,7 @@
 				const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
 				document.getElementById("countdown-ticker").innerHTML =
-					`SUMMER DEAL ⏳ ${days} DAYS ${hours}:${minutes}:${seconds} LEFT`;
+					`SUMMER DEAL ⏳ ${days} DAYS ${hours} : ${minutes} : ${seconds} LEFT`;
 			}
 
 			setInterval(updateCountdown, 1000);
